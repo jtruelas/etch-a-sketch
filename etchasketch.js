@@ -26,9 +26,6 @@ container.addEventListener('mousemove', (event) => {
     const screenLeft = screen.left + borderLeft;
     const screenRight = screen.right - borderRight - 5;
 
-    console.log(`Screen Dimensions:\nTop: ${screenTop}\n Bottom: ${screenBottom}\n Left: ${screenLeft}\n Right: ${screenRight}\n`);
-    console.log(`Mouse Location:\nX: ${event.clientX}\nY: ${event.clientY}`);
-
     // Check if mouse is on screen
     if(event.clientX >= screenLeft &&
         event.clientX < screenRight &&
