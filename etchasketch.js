@@ -1,8 +1,9 @@
 // Create base 16x16 structure
 const bodySelector = document.getElementById('main-container');
 const container = document.getElementById('container');
+let gridSize = 16;
 
-for(let i = 0; i < 16; i++) {
+for(let i = 0; i < gridSize; i++) {
     const div = document.createElement('div');
     div.setAttribute('id', 'layout');
     container.append(div);
@@ -10,6 +11,7 @@ for(let i = 0; i < 16; i++) {
 
 // Create event listener
 container.addEventListener('mousemove', (event) => {
+    
     // Create boundary for screen
     const screen = container.getBoundingClientRect();
 
@@ -33,6 +35,7 @@ container.addEventListener('mousemove', (event) => {
         event.clientY < screenBottom
     ) {
     const sketch = document.createElement('div');
+    sketch.setAttribute('id', 'sketch');
     sketch.style.position = 'absolute';
     sketch.style.width = '8px';
     sketch.style.height = '8px';
@@ -47,5 +50,13 @@ container.addEventListener('mousemove', (event) => {
 // Create button element with a prompt
 const button = document.createElement('button');
 button.setAttribute('id', 'grid-button');
-button.textContent = "Create New Grid";
+button.textContent = "Shake-It";
 bodySelector.prepend(button);
+
+// Create listner for button
+button.addEventListener('click', (event) => {
+
+    // Clear created divs
+    clearDivs = document.querySelectorAll('#sketch');
+    clearDivs.forEach((element) => element.remove());
+});
