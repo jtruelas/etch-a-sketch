@@ -1,4 +1,5 @@
 // Create base 16x16 structure
+const bodySelector = document.getElementById('main-container');
 const container = document.getElementById('container');
 
 for(let i = 0; i < 16; i++) {
@@ -19,3 +20,8 @@ document.addEventListener('mousemove', (event) => {
     sketch.style.top = event.clientY + 'px';
     container.appendChild(sketch);
 });
+
+// Create button element with a prompt
+const button = document.createElement('button');
+button.setAttribute('id', 'grid-button');
+bodySelector.prepend(button);
